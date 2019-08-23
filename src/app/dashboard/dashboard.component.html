@@ -2,6 +2,9 @@
 <form class="example-form" [formGroup]="dataForm" (ngSubmit)= "OnSubmit()" *ngIf="!submitted">
     <mat-form-field class="example-full-width">
         <input matInput placeholder="First Name" name="firstname" formControlName="firstname">
+        <mat-error *ngIf="dataForm.get('firstname').hasError('required')">
+            First Name is <strong>required</strong>
+        </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
