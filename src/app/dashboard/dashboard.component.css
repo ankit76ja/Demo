@@ -1,0 +1,14 @@
+.example-form {
+    
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .submitButton{
+      background-color: lightgrey;
+  }
