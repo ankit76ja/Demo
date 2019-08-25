@@ -1,4 +1,7 @@
-<mat-toolbar>Welcome to the Home Page! {{userName}}</mat-toolbar>
+<mat-toolbar>Welcome to the Home Page! {{userName}} 
+        <button  style="margin-left: 300px;"mat-button type="submit" class="submitButton" routerLink='/employee'>EmployeeDetails</button>
+</mat-toolbar>
+
 <form class="example-form" [formGroup]="dataForm" (ngSubmit)= "OnSubmit()" *ngIf="!submitted">
     <mat-form-field class="example-full-width">
         <input matInput placeholder="First Name" name="firstname" formControlName="firstname">
@@ -33,13 +36,6 @@
     <button mat-button type="submit" class="submitButton" >Submit</button>
 
 </form>
-<div *ngIf="submitted">
-    <mat-card>FIRST NAME : {{dataForm.value.firstname}}</mat-card>
-    <mat-card>LAST NAME : {{dataForm.value.lastname}}</mat-card>
-    <mat-card>GENDER : {{dataForm.value.gender}}</mat-card>
-    <mat-card>INSTITUTION NAME : {{dataForm.value.iname}}</mat-card>
-    <mat-card>DESIGNATION : {{dataForm.value.desg}}</mat-card>
-    <mat-card>EXPECTED SALARY : {{dataForm.value.sal}}</mat-card>
-    
-</div>
+
+
 

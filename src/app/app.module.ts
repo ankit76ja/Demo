@@ -9,13 +9,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRadioModule} from '@angular/material/radio';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { PwaService } from './service/pwa/pwa.service';
+import { EmployeeDetails } from './model/employeeDetails';
+import { EmployeeService } from './service/employee/employee.service';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +35,10 @@ import {MatRadioModule} from '@angular/material/radio';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatRadioModule,
-    MatCardModule
+    MatCardModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [PwaService, EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
